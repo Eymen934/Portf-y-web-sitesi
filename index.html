@@ -1,0 +1,227 @@
+[15:39, 31.05.2025] Pac-MEG(Rapper)💪🏿: <!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M.E.G. Bilgi Platformu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <button id="modBtn">🌙 Karanlık Mod</button>
+
+  <header>
+    <h1>Muhammed Eymen Günay</h1>
+    <p>Kodlama, merak ve bilgi dolu bir yolculuk</p>
+  </header>
+
+  <nav>
+    <a href="#hakkimda">Hakkımda</a>
+    <a href="#bilgiler">Bilgiler</a>
+    <a href="#meslek">Gelecekteki Mesleğim</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
+
+  <section id="hakkimda">
+    <h2>Hakkımda</h2>
+    <p>Ben Muhammed Eymen Günay. 2. sınıftan beri kodlamaya ilgi duyuyorum. Blok tabanlı programlama ile başladım ve şimdi SQL gibi ileri seviye konularla uğraşıyorum. Eskiden basketbol oynardım, şimdi yüzmeye merak sardım. Kodlama ve teknoloji tutkunu biriyim.</p>
+  </section>
+
+  <section id="bilgiler">
+    <h2>Bilgi Kutuları</h2>
+    <div id="kartlar"></div>
+  </section>
+
+  <section id="meslek">
+    <h2>Gelecekteki Hayalim</h2>
+    <p>Ben gelecekte yapay zeka ve yazılım geliştirme alanında uzman bir yazılımcı olmak istiyorum. Bilgileri analiz eden, insanlara faydalı yazılımlar geliştiren bir profesyonel hayalim var.</p>
+  </section>
+
+  <section id="iletisim">
+    <h2>Bana Ulaş</h2>
+    <form action="iletisim.php" method="POST">
+      <input type="text" name="ad" placeholder="Adınız" required>
+      <input type="email" name="email" placeholder="E-posta" required>
+      <textarea name="mesaj" placeholder="Mesajınız" required></textarea>
+      <button type="submit">Gönder</button>
+    </form>
+  </section>
+
+  <script>
+    // Karanlık mod geçişi
+    const modBtn = document.getElementById("modBtn");
+    modBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+    });
+
+    // Bilgi kutularını PHP'den çek
+    fetch("bilgiler.php")
+      .then(res => res.json())
+      .then(data => {
+        const kartlarDiv = document.getElementById("kartlar");
+        data.forEach(kart => {
+          const kartEl = document.createElement("div");
+          kartEl.className = "kart";
+          kartEl.innerHTML = `
+            <h3>${kart.baslik}</h3>
+            <p>${kart.icerik}</p>
+          `;
+          kartlarDiv.appendChild(kartEl);
+        });
+      })
+      .catch(err => console.error("Veriler alınamadı:", err));
+  </script>
+
+</body>
+</html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammed Eymen - SQL ve Kodlama</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #fff;
+    }
+    header, footer {
+      background-color: #1e1e1e;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #2a2a2a;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+    nav a:hover {
+      background-color: #444;
+    }
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      border-bottom: 1px solid #555;
+      padding-bottom: 0.5rem;
+    }
+    pre {
+      background-color: #1e1e1e;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    .quiz {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      margin-top: 2rem;
+      border-radius: 8px;
+    }
+    .quiz h3 {
+      margin-top: 0;
+    }
+    .quiz label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .quiz button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #00bcd4;
+      color: #000;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .quiz button:hover {
+      background-color: #0097a7;
+    }
+  </style>
+</head>
+<body>  <header>
+    <h1>Muhammed Eymen Günay</h1>
+    <p>"Kod yaz, veriyle oyna, geleceği kur!"</p>
+  </header>  <nav>
+    <a href="#hakkimda">Hakkımda</a>
+    <a href="#bilgiler">SQL Bilgileri</a>
+    <a href="#quiz">Mini Quiz</a>
+    <a href="#iletisim">Bana Ulaş</a>
+  </nav>  <section id="hakkimda">
+    <h2>Hakkımda</h2>
+    <p>Ben Muhammed Eymen Günay. Kodlamaya ikinci sınıftan beri ilgim var. Blok tabanlı programlama ile başladım ve şimdi SQL gibi dilleri öğreniyorum. Boş zamanlarımda kod yazarım ve yüzmeye bayılırım. Yazılım dünyasında büyük hayallerim var!</p>
+  </section>  <section id="bilgiler">
+    <h2>SQL Nedir?</h2>
+    <p><strong>SQL (Structured Query Language)</strong>, ilişkisel veritabanlarıyla çalışmak için kullanılan bir sorgu dilidir. Çok yaygın kullanılır ve veri ekleme, silme, güncelleme ve sorgulama işlemleri için idealdir.</p>
+    <p>SQL ile neler yapabilirim? Yeni tablo oluşturabilir, veri ekleyebilir, sıralama ve filtreleme yapabilir, çok büyük verilerle rahat çalışabilirsin.</p>
+    <pre>
+CREATE TABLE ogrenciler (
+  id INT PRIMARY KEY,
+  isim VARCHAR(100),
+  yas INT,
+  sinif VARCHAR(10)
+);
+    </pre>
+    <p>Veri eklemek için:</p>
+    <pre>
+INSERT INTO ogrenciler (id, isim, yas, sinif)
+VALUES (1, 'Ali Yılmaz', 13, '7A');
+    </pre>
+    <p>SQL bilmek, veriyle çalışmak isteyen herkes için temel beceridir!</p>
+  </section>  <section id="quiz" class="quiz">
+    <h2>Mini SQL Quiz</h2>
+    <div id="quiz-container">
+      <h3>1. SQL'de yeni tablo oluşturmak için hangi komut kullanılır?</h3>
+      <label><input type="radio" name="q1" value="a"> INSERT</label>
+      <label><input type="radio" name="q1" value="b"> CREATE TABLE</label>
+      <label><input type="radio" name="q1" value="c"> UPDATE</label><h3>2. Verileri sorgulamak için hangi komut kullanılır?</h3>
+  <label><input type="radio" name="q2" value="a"> SELECT</label>
+  <label><input type="radio" name="q2" value="b"> DELETE</label>
+  <label><input type="radio" name="q2" value="c"> DROP</label>
+
+  <button onclick="kontrolEt()">Cevapları Kontrol Et</button>
+  <p id="sonuc"></p>
+</div>
+
+<section id="quiz">
+  <h2>SQL Quiz</h2>
+  <form id="quizForm">
+    <p>1. SQL neyin kısaltmasıdır?</p>
+    <label><input type="radio" name="soru1" value="a"> A) Structured Query Language</label><br>
+    <label><input type="radio" name="soru1" value="b"> B) Strong Question Line</label><br>
+
+    <p>2. SQL ne için kullanılır?</p>
+    <label><input type="radio" name="soru2" value="a"> A) Web sayfası tasarlamak için</label><br>
+    <label><input type="radio" name="soru2" value="b"> B) Veritabanı işlemleri için</label><br>
+
+    <button type="button" onclick="quizKontrol()">Cevapları Gönder</button>
+    <p id="sonuc"></p>
+  </form>
+</section> 
+
+<script>
+  function quizKontrol() {
+    let dogru = 0;
+
+    const soru1 = document.querySelector('input[name="soru1"]:checked');
+    const soru2 = document.querySelector('input[name="soru2"]:checked');
+
+    if (soru1 && soru1.value === "a") dogru++;
+    if (soru2 && soru2.value === "b") dogru++;
+
+    document.getElementById("sonuc").innerText = "Doğru sayın: " + dogru + " / 2";
+  }
+</script>
+</html>
